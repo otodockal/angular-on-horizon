@@ -1,12 +1,12 @@
 
-Refactor component angular-on-horizon.component.ts:
+Refactor component app.component.ts:
 
 ```typescript
 import {Component} from '@angular/core';
 import {HorizonService} from './horizon.service';
 
 @Component({
-    selector: 'angular-on-horizon-app',
+    selector: 'app-root',
     template: `
         <form (submit)="add(todo)">
             <input type="text" [(ngModel)]="todo">
@@ -19,7 +19,7 @@ import {HorizonService} from './horizon.service';
         </ul>
     `
 })
-export class AngularOnHorizonAppComponent {
+export class AppComponent {
 
     todo: string = '';
     items: any;

@@ -14,8 +14,8 @@ PREREQUISITES
     - http://horizon.io/install/
     - npm install -g horizon
 
-STEPS
------
+STEPS (macOS)
+-------------
 [1] Open terminal
 
 ```bash 
@@ -36,16 +36,16 @@ ng g service horizon
 open -t src/app/horizon.service.ts
 # add `table = Horizon({host: 'localhost:8181'});` 
 open -t src/typings.d.ts
-# add `declare var Horizon: any;`
+# add `declare var Horizon: any;` NOTE: this will not be needed https://github.com/rethinkdb/horizon/pull/531
 ```
 
 [4] Inject Horizon service
 
 ```bash
 open -t src/main.ts
-# replace `bootstrap(AngularOnHorizonAppComponent);`
+# replace `bootstrap(AppComponent);`
 # by
-# `import {HorizonService} from './app/horizon.service'; bootstrap(AngularOnHorizonAppComponent, [HorizonService]);`
+# `import {HorizonService} from './app/horizon.service'; bootstrap(AppComponent, [HorizonService]);`
 ```
 
 Horizon service can be used now everywhere in your component tree!
