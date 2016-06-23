@@ -8,6 +8,7 @@ import {HorizonService} from './horizon.service';
 @Component({
     selector: 'app-root',
     template: `
+        <h1>{{title}}</h1>
         <form (submit)="add(todo)">
             <input type="text" [(ngModel)]="todo">
             <button type="submit">Add</button>
@@ -21,6 +22,7 @@ import {HorizonService} from './horizon.service';
 })
 export class AppComponent {
 
+    title = 'app works!';    
     todo: string = '';
     items: any;
     table = this.horizon.table('todos');
