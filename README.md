@@ -19,7 +19,7 @@ STEPS (macOS)
 [1] Open terminal
 
 ```bash 
-ng new angular_on_horizon && cd angular_on_horizon && hz init
+ng new angular_on_horizon && cd angular_on_horizon && hz init && npm install
 ```
 
 [2] Add horizon.js into index.html
