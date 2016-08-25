@@ -10,7 +10,7 @@ import {HorizonService} from './horizon.service';
     template: `
         <h1>{{title}}</h1>
         <form (submit)="add(todo)">
-            <input type="text" [(ngModel)]="todo">
+            <input type="text" [(ngModel)]="todo" name="todo">
             <button type="submit">Add</button>
         </form>
         <ul>
