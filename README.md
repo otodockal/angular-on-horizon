@@ -79,3 +79,7 @@ Horizon service can be used now everywhere in your component tree!
 ```bash
 hz serve --dev & ng serve & open http://localhost:4200
 ```
+
+EXAMPLE
+-------
+Refactor [app.component.ts](EXAMPLE_SIMPLE.md)
