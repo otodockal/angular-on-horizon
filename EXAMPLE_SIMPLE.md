@@ -2,8 +2,8 @@
 Refactor component app.component.ts:
 
 ```typescript
-import {Component} from '@angular/core';
-import {HorizonService} from './horizon.service';
+import { Component } from '@angular/core';
+import { HorizonService } from './horizon.service';
 
 @Component({
     selector: 'app-root',

@@ -2,15 +2,16 @@
 Angular on Horizon
 ==================
 
-Run [Angular 2](https://angular.io/) on [Horizon.io](https://horizon.io/) in 5 steps.  
+Run [Angular 2](https://angular.io/) on [Horizon.io](https://horizon.io/) in 5 steps.
 This Cookbook is only about setting up Horiozon DEV server with Angular 2 the easiest way.  
 Horizon.io is built on top of RxJS, so integration with Angular 2 is pretty seamless.  
 Cookbook is macOS(OS X) only for now and WIP.
 
-PREREQUISITES
--------------
+## PREREQUISITES
 - Node.js 4+
     - https://nodejs.org/en/download/
+- TypeScript 2.1
+    - http://www.typescriptlang.org/
 - Angular CLI
     - npm install -g angular-cli@webpack
     - https://github.com/angular/angular-cli/
@@ -18,15 +19,18 @@ PREREQUISITES
     - npm install -g horizon
     - http://horizon.io/install/
 
-STEPS (macOS)
--------------
-[1] Open terminal
+## Table of Contents
+- [macOS (OSX)](#macos-osx)
+- [Windows](#windows)
+
+## macOS (OSX)
+### 1. Open terminal
 
 ```bash 
-ng new angular_on_horizon && cd angular_on_horizon && hz init && npm install && npm install @horizon/client --save
+ng new AngularOnHorizon && cd AngularOnHorizon && hz init && npm install && npm install @horizon/client --save
 ```
 
-[2] Create Horizon service
+### 2. Create Horizon service
     
 ```bash
 ng g service horizon
@@ -36,7 +40,7 @@ nano src/app/horizon.service.ts
 ```typescript
 // replace file by:
 import {Injectable} from '@angular/core';
-var Horizon = require('@horizon/client');
+const Horizon = require('@horizon/client');
 
 @Injectable()
 export class HorizonService {
@@ -44,22 +48,7 @@ export class HorizonService {
 }
 ```
 
-
-[3] Declare typings
-
-NOTE: this step will not be needed soon! ◦°˚\(*❛‿❛)/˚°◦ (https://github.com/rethinkdb/horizon/pull/741)
-
-```bash
-nano src/typings.d.ts
-```
-
-```typescript
-// add
-declare var Horizon: any;
-```
-
-
-[4] Inject Horizon service
+### 3. Inject Horizon service
 
 ```bash
 nano src/app/app.module.ts
@@ -67,19 +56,28 @@ nano src/app/app.module.ts
 
 ```typescript
 // add
-import {HorizonService} from './horizon.service';
+import { HorizonService } from './horizon.service';
 // replace providers
 providers: [HorizonService],
 ```
 
 Horizon service can be used now everywhere in your component tree!
 
-[5] run
+### 4. Run Horizon (dedicated terminal)
 
 ```bash
-hz serve --dev & ng serve & open http://localhost:4200
+hz serve --dev
 ```
 
-EXAMPLE
--------
+### 5. Run Angular app (dedicated terminal)
+
+```bash
+ng serve & open http://localhost:4200
+```
+
+## Windows
+
+PR more than welcome!
+
+## EXAMPLE
 Refactor [app.component.ts](EXAMPLE_SIMPLE.md)
